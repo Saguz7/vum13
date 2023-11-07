@@ -1,0 +1,34 @@
+.boderBottom--Rosa {
+    border-bottom: 5px solid var(--rosaClaro);
+    }
+    .nav-link {
+    color: var(---gray-20) !important;
+    }
+    .logo-header {
+    width: 150px;
+    }
+    .itemNav-header {
+    padding: 5px;
+    margin-left: 20px !important;
+    cursor: pointer;
+    color: var(--guinda);
+    }
+    .itemNav-header:hover {
+    background-color: var(--rosaClaro);
+    color: var(--guinda);
+    border-radius: 5px;
+    font-weight: 700;
+    }
+    .itemDropDown-header {
+    padding: 5px !important;
+    color: var(--guinda);
+    }
+    .itemDropDown-header:hover {
+    cursor: pointer;
+    color: var(--guinda);
+    font-weight: 700;
+    background-color: var(--rosaClaro);
+    }
+
+    
+    

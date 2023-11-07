@@ -1,0 +1,35 @@
+.table {
+--bs-table-striped-bg:var(--rosaAlert);
+color:var(--guinda);
+}
+.cta {
+position: relative;
+display: flex;
+justify-content: center ;
+cursor: pointer;
+padding: 10px 25px;
+border-radius: 10px;
+font-weight: 700;
+border: none;
+max-width: 380px;
+}
+.cta--short {
+width: 100px;
+}
+.pill {
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+border: 1px solid var(--guinda);
+border-radius: 30px;
+padding: 10px 20px;
+background-color: var(--rosaAlert);
+color:var(--guinda);
+box-shadow: 3px 3px 3px 0px var(--black-alpha-10);
+}
+
+.table-container {
+    max-height: 70vh; /* Puedes ajustar este valor según tus necesidades */
+    overflow-y: auto;
+  }

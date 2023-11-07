@@ -2,17 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0; 
+      --red: #ec3333;
+      --white: #ffffff;
+      --black: #000000;
+      --blue: #1946bb;
+      --light-blue: #4b73f0;
+      --orage: #fc7700;
+      --light-orange: #ffaf17;
+      --green: #bbce00;
+      --primary-text: #050505;
+      --secondary-text: #65676b;
+      --input-gray: #f0f2f5;
+      --gray-00: #f5f6f7;
+      --gray-05: #f2f3f5;
+      --gray-10: #ebedf0;
+      --gray-20: #dadde1;
+      --gray-25: #ccd0d5;
+      --gray-30: #bec3c9;
+      --gray-45: #8d949e;
+      --gray-70: #606770;
+      --gray-80: #444950;
+      --gray-90: #303338;
+      --gray-100: #1c1e21; 
   }
 }
 
@@ -25,3 +51,231 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+.navbar-nav {
+  flex-direction: row !important;
+  
+} 
+
+.align-items-center {
+  align-items: center!important;
+}
+.d-flex {
+  display: flex!important;
+}
+
+
+.itemNav-header { 
+  margin-left: 20px;
+}
+
+/*
+@font-face {
+  font-family: 'Gibson-Bold';
+  src: url('./fonts/Gibson-Bold.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gibson-BoldItalic';
+  src: url('./fonts/Gibson-BoldItalic.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gibson-Book';
+  src: url('./fonts/Gibson-Book.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gibson-BookItalic';
+  src: url('./fonts/Gibson-BookItalic.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gibson-Heavy';
+  src: url('./fonts/Gibson-Heavy.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gibson-HeavyItalic';
+  src: url('./fonts/Gibson-HeavyItalic.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gibson-Italic';
+  src: url('./fonts/Gibson-Italic.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gibson-Light';
+  src: url('./fonts/Gibson-Light.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gibson-LightItalic';
+  src: url('./fonts/Gibson-LightItalic.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gibson-Medium';
+  src: url('./fonts/Gibson-Medium.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gibson-MediumItalic';
+  src: url('./fonts/Gibson-MediumItalic.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gibson-Regular';
+  src: url('./fonts/Gibson-Regular.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gibson-SemiBold';
+  src: url('./fonts/Gibson-SemiBold.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gibson-SemiBoldItalic';
+  src: url('./fonts/Gibson-SemiBoldItalic.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gibson-Thin';
+  src: url('./fonts/Gibson-Thin.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gibson-ThinItalic';
+  src: url('./fonts/Gibson-ThinItalic.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*/
+
+.form-input {
+  width: 100%;
+  max-width: 380px;
+  height: 45px;
+  margin: 10px 0px;
+  border: none;
+  background-color: var(--input-gray);
+  color: #65676b;
+  outline: none;
+  border-radius: 40px;
+  padding: 0px 15px;
+  font-size: 14px;
+  }
+  .form-input--full {
+  max-width: inherit !important;
+  }
+  .form-input--short {
+  width: 100px;
+  }
+  .form-input--disabled {
+  border: 1px solid var(---gray-20);
+  background-color: var(--gray-20);
+  color: var(--gray-40) !important;
+  cursor: not-allowed;
+  }
+  .form-input--disabled:hover {
+  border: 1px solid var(---gray-20);
+  background-color: var(--gray-20);
+  color: var(--gray-40) !important;
+  cursor: not-allowed;
+  }
+  .form-input--icon {
+  border-bottom-right-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  }
+  .form-input--disabled:hover {
+  display: flex;
+  justify-content: center;
+  border-bottom-right-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: var(--input-gray);
+  padding-right: 15px;
+  }
+
+  input[type="radio"] + label {
+    cursor: pointer;
+    }
+    input[type="radio"] + label:before{
+    content: "";
+    width: 25px;
+    height: 25px;
+    float: left;
+    margin: 0px 10px 0 0;
+    border: 2px solid #ccc;
+    background: #fff;
+    border-radius: 100%;
+    }
+    input[type="radio"]{
+    display: none;
+    }
+    input[type="radio"]:checked + label{
+    color: var(--guinda);
+    }
+    input[type="radio"]:checked + label:after{
+    content: "";
+    width: 23px;
+    height: 23px;
+    background-color: var(--guinda);
+    border: 5px solid white;
+    float: left;
+    margin-left: -34px;
+    margin-top: 1px;
+    border-radius: 100%;
+    }
+    input[type="radio"]:checked + label::before{
+    border: 8px solid var(--guinda);
+    }
+
+    .padding-elements{
+      padding: 4%;
+  }

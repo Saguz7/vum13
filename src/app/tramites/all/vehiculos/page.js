@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCar } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import Sidebar from '@public/components/Sidebar';
 
 import Header from '@public/components/Header'; 
 import './style.css';
@@ -20,9 +21,21 @@ const containerStyle = {
 
 export default function Page() {
   const [personaType, setPersonaType] = useState(''); // State to control the type of person
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
   const handlePersonaTypeChange = (e) => {
     setPersonaType(e.target.value);
+  };
+
+
+  const handleButtonClick = async () => {
   };
 
   return (

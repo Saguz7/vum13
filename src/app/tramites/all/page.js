@@ -2,17 +2,12 @@
 "use client"; // This is a client component 👈🏽
 
 import React, { useState } from 'react';
-import Header from '../../../../public/components/Header';
-import Footer from '../../../../public/components/Footer';
-
-import Input from '../../../../public/components/Input';
-import FileInput from '../../../../public/components/FileInput'; // Corregir el import
-import Button from '../../../../public/components/Button';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Header from '@public/components/Header';
+ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faCar } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import Sidebar from '@public/components/Sidebar';
 
  import './style.css';
 
@@ -26,9 +21,19 @@ const containerStyle = {
 
 export default function Page() {
   const [personaType, setPersonaType] = useState(''); // Estado para controlar el tipo de persona
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
   const handlePersonaTypeChange = (e) => {
     setPersonaType(e.target.value);
+  };
+
+  const handleButtonClick = async () => {
   };
 
   return (

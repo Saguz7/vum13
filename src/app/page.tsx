@@ -2,9 +2,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import Header from '@public/components/Header'; 
-import Link from 'next/link';
-import Button from '@public/components/Button'; 
+import Header from '@public/components/Header';  
 import Sidebar from '@public/components/Sidebar';
 
 const containerStyle = {
@@ -46,8 +44,7 @@ export default function Home() {
       <div className="bg-white min-h-screen flex flex-col items-center justify-center">
         <div className="bg-crimson-700 text-white p-8 rounded-lg">
         
-        <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} onClick={handleButtonClick} />
-
+ 
         </div>
       </div>
     </div>

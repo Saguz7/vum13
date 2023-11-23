@@ -1,13 +1,15 @@
  
 
   import React from 'react';
-import Header from '../../../public/components/Header';  
-import Table from '../../../public/components/Table';  
+import Header from '@public/components/Header';  
+import Table from '@public/components/Table';  
 
 const containerStyle = {
-  height: '100vh',  // 100% de la altura del viewport
+  display: 'flex',
+  flexDirection: 'column',
+  minHeight: '100vh',
   overflow: 'hidden',  // Deshabilita el scroll
-  backgroud: 'white'
+  background: 'white'
 };
 
 export default function Page() {

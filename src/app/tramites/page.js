@@ -1,23 +1,49 @@
 "use client"; // This is a client component 👈🏽
  
 
-import React, { useState } from 'react';
-import Header from '../../../public/components/Header';  
-import Table from '../../../public/components/Table';  
-import Filters from '../../../public/components/Filters';  
+import React, { useState, useEffect } from 'react';
+import Header from '@public/components/Header';  
+import Table from '@public/components/Table';  
+import Filters from '@public/components/Filters';  
+import Button from '@public/components/Button';
 import Select from 'react-select';
 import ReactPaginate from 'react-paginate';
-import Button from '../../../public/components/Button';
+import Sidebar from '@public/components/Sidebar';
 
 import './style.css';
 
 const containerStyle = {
-  height: '100vh',  // 100% de la altura del viewport
+  display: 'flex',
+  flexDirection: 'column',
+  minHeight: '100vh',
   overflow: 'hidden',  // Deshabilita el scroll
   background: 'white'
 };
 
 export default function Page() {
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', closeSidebar);
+
+    return () => {
+      document.removeEventListener('click', closeSidebar);
+    };
+  }, []);
+
+  const handleButtonClick = (e) => { 
+    e.stopPropagation();
+  };
+
   const options = [
     { value: 'Alta Vehículo', label: 'Alta Vehículo' },
     { value: 'Notario', label: 'Notario' },
@@ -144,19 +170,21 @@ export default function Page() {
   };
  
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} className="main-content">
+ 
       <Header />
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} onClick={handleButtonClick} />
+
       <div className="bg-white min-h-screen  ">
       <div className="container">
-      <div className="text-big text-bold text-guinda text-center padding-elements ">Listado de Trámites</div>
-
+ 
       <div className="card">
 
         <div className="bg-white flex flex-col ">
           <div className="d-flex w-100 form-select-type">
           <div className="card card-filters"> 
           <div className="row"> 
-          <div className="col-3">
+          <div className="col-sm-12 col-md-3">
                       <Select
                         options={optionstipos}
                         value={selectedTipo}
@@ -165,7 +193,7 @@ export default function Page() {
                         isClearable
                       />
                     </div>
-                    <div className="col-3">
+                    <div className="col-sm-12 col-md-3">
                       <Select
                         options={optionsestatus}
                         value={selectedEstatus}
@@ -174,9 +202,9 @@ export default function Page() {
                         isClearable
                       />
                     </div> 
-                    <div className="col-6">
+                    <div className="col-sm-12 col-md-3">
                         <div className="col-12 d-flex justify-content-end align-items-center">
-                          <a href="tramites/iniciar">
+                          <a href="tramites/all">
                             <Button text="Iniciar Trámite" customStyle={{ width: '180px' }} />
                           </a>
                         </div>
@@ -200,8 +228,8 @@ export default function Page() {
                 onPageChange={handlePageChange}
                 containerClassName="pagination"
                 activeClassName="active"
-                previousLabel="<<"
-                nextLabel=">>"
+                previousLabel="Anterior"
+                nextLabel="Siguiente"
               />
           </div>
 

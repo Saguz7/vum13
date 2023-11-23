@@ -1,0 +1,38 @@
+.card-iconos{
+    background:  #ebedf0;
+    height: 80vh;
+}
+
+.card-filters{
+    background:  #ebedf0;
+}
+
+.form-input-search {
+    width: 100%;
+    max-width: 380px;
+    height: 45px;
+    margin: 10px 0px;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    outline: none;
+    border-radius: 40px;
+    padding: 0px 15px;
+    font-size: 14px;
+    }
+
+
+    .card-iconos-center{
+        background:  #fff;
+        height: 70vh;
+    }
+
+
+    .title-card { 
+        padding: 10px; 
+        }
+
+
+    .icon-card { 
+        padding: 20px; 
+    }

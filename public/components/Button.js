@@ -1,18 +1,14 @@
 import React from 'react';
 
-function Button({ text, customStyle }) {
+function Button({ text, customStyle, onClick, disabled, className }) {
   const buttonStyle = {
     height: '45px',
-    borderRadius: '10px',
-    border: '1px solid #000',
-    background: '#4A001F',
-    color: '#fff', // Texto de color blanco
-    cursor: 'pointer',
+    borderRadius: '10px', 
     ...customStyle, // Fusiona el estilo personalizado con el estilo predeterminado
   };
 
   return (
-    <button style={buttonStyle}>
+    <button style={buttonStyle} onClick={onClick} disabled={disabled} className={className}>
       {text}
     </button>
   );

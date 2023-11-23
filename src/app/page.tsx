@@ -1,21 +1,52 @@
-import React from 'react';
-import Header from '../../public/components/Header'; 
+"use client"; // This is a client component 👈🏽
+
+
+import React, { useState, useEffect } from 'react';
+import Header from '@public/components/Header'; 
 import Link from 'next/link';
-import Button from '../../public/components/Button'; 
+import Button from '@public/components/Button'; 
+import Sidebar from '@public/components/Sidebar';
 
 const containerStyle = {
-  height: '100vh',  // 100% de la altura del viewport
-  overflow: 'hidden',  // Deshabilita el scroll
+  height: '100vh',
+  overflow: 'hidden',
 };
 
 export default function Home() {
- 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', closeSidebar);
+
+    return () => {
+      document.removeEventListener('click', closeSidebar);
+    };
+  }, []);
+
+  const handleButtonClick = (e) => {
+    console.log('Hola Mundo');
+    console.log(e);
+
+    e.stopPropagation();
+  };
+
   return (
     <div style={containerStyle}>
       <Header />
+ 
+
       <div className="bg-white min-h-screen flex flex-col items-center justify-center">
         <div className="bg-crimson-700 text-white p-8 rounded-lg">
         
+        <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} onClick={handleButtonClick} />
 
         </div>
       </div>

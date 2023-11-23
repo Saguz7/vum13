@@ -1,0 +1,47 @@
+input[type="radio"] + label {
+    cursor: pointer;
+    }
+    input[type="radio"] + label:before{
+    content: "";
+    width: 25px;
+    height: 25px;
+    float: left;
+    margin: 0px 10px 0 0;
+    border: 2px solid #ccc;
+    background: #fff;
+    border-radius: 100%;
+    }
+    input[type="radio"]{
+    display: none;
+    }
+    input[type="radio"]:checked + label{
+    color: var(--guinda);
+    }
+    input[type="radio"]:checked + label:after{
+    content: "";
+    width: 23px;
+    height: 23px;
+    background-color: var(--guinda);
+    border: 5px solid white;
+    float: left;
+    margin-left: -34px;
+    margin-top: 1px;
+    border-radius: 100%;
+    }
+    input[type="radio"]:checked + label::before{
+    border: 8px solid var(--guinda);
+    }
+
+
+    .width-form {
+        width: 100%;
+    }
+
+    .width-form-content{
+        width: 80%;
+
+    }
+
+    .form-select-type{
+        padding: 2%;
+    }

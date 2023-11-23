@@ -20,6 +20,7 @@ export default function RootLayout({
     <html lang="es">
       <Head>
         {/* Agrega la hoja de estilos en la sección <head> */}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
         <link href="https://ui.michoacan.gob.mx/static/css/main.edcd66f5.css" rel="stylesheet" />
       </Head>
       <body className={inter.className}>{children}</body>

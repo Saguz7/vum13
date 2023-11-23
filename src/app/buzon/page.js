@@ -2,16 +2,18 @@
  
 
 import React, { useState } from 'react';
-import Header from '../../../public/components/Header';  
-import Table from '../../../public/components/Table';  
-import Filters from '../../../public/components/Filters';  
+import Header from '@public/components/Header';  
+import Table from '@public/components/Table';  
+import Filters from '@public/components/Filters';  
 import Select from 'react-select';
 import ReactPaginate from 'react-paginate';
 
 import './style.css';
 
 const containerStyle = {
-  height: '100vh',  // 100% de la altura del viewport
+  display: 'flex',
+  flexDirection: 'column',
+  minHeight: '100vh',
   overflow: 'hidden',  // Deshabilita el scroll
   background: 'white'
 };
@@ -171,7 +173,6 @@ export default function Page() {
       <Header />
       <div className="bg-white min-h-screen  ">
       <div className="container">
-      <div className="text-big text-bold text-guinda text-center padding-elements ">Buzón tributario</div>
 
       <div className="card">
  
@@ -225,8 +226,8 @@ export default function Page() {
                 onPageChange={handlePageChange}
                 containerClassName="pagination"
                 activeClassName="active"
-                previousLabel="<<"
-                nextLabel=">>"
+                previousLabel="Anterior"
+                nextLabel="Siguiente"
               />
           </div>
 

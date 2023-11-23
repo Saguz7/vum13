@@ -22,3 +22,9 @@
   
   }
    
+  @media (max-width: 768px) {
+    /* Estilos para pantallas más pequeñas */
+    .container {
+      padding: 10px;
+    }
+  }

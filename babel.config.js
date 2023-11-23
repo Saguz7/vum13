@@ -1,4 +1,5 @@
 module.exports = {
+  extends: ['next', 'next/core-web-vitals'],
   presets: [
     '@babel/preset-env',
     '@babel/preset-react',

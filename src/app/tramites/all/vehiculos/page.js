@@ -5,11 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCar } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 
-import Header from '../../../../public/components/Header';
-import Footer from '../../../../public/components/Footer';
-import Input from '../../../../public/components/Input';
-import FileInput from '../../../../public/components/FileInput'; // Corrected the import
-import Button from '../../../../public/components/Button';
+import Header from '@public/components/Header'; 
 import './style.css';
 
 const containerStyle = {

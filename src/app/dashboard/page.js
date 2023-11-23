@@ -1,9 +1,9 @@
- 
+"use client"; // This is a client component 👈🏽
 
-  import React from 'react';
+
+import React from 'react';
 import Header from '@public/components/Header';  
-import Table from '@public/components/Table';  
-
+ 
 const containerStyle = {
   display: 'flex',
   flexDirection: 'column',

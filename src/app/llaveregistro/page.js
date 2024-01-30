@@ -22,7 +22,7 @@ import Select from '@public/components/Select'; // Ajusta la importación según
 
 
 import { pdfjs } from "react-pdf";
-import { useDarkMode } from "src/app/DarkModeContext";
+import { useDarkMode } from "@/app/DarkModeContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 

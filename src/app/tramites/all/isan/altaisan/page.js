@@ -11,7 +11,7 @@ import FileInput from "@public/components/FileInput"; // Corregir el import
 import Notificacion from "@public/components/Notificacion";
 
 import { pdfjs } from "react-pdf";
-import { useDarkMode } from "src/app/DarkModeContext";
+import { useDarkMode } from "@/app/DarkModeContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import Footer from "@public/components/Footer";

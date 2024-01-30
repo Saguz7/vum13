@@ -10,7 +10,7 @@ import Button from "@public/components/Button";
 import Sidebar from "@public/components/Sidebar";
 
 import ModalInfo from "@public/components/ModalInfo"; // Asegúrate de ajustar la ruta de importación
-import { useDarkMode } from "src/app/DarkModeContext";
+import { useDarkMode } from "@/app/DarkModeContext";
 
 import { useRouter } from "next/navigation";
 import { pdfjs } from "react-pdf";

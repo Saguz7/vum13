@@ -12,8 +12,8 @@ import Button from '@public/components/Button';
 
 import ModalInfo from '@public/components/ModalInfo';  
 import { useRouter } from 'next/navigation';
-import { useUser } from 'src/app/UserContext';
-import { useDarkMode } from 'src/app/DarkModeContext';
+import { useUser } from '@/app/UserContext';
+import { useDarkMode } from '@/app/DarkModeContext';
 import axios from "axios";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEyeSlash, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';

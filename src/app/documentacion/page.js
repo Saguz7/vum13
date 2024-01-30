@@ -15,7 +15,7 @@ import Link from "next/link";
 
  import { useRouter } from "next/navigation";
 import { pdfjs } from "react-pdf";
-import { useDarkMode } from "src/app/DarkModeContext";
+import { useDarkMode } from "@/app/DarkModeContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import getConfig from '@raiz/config';

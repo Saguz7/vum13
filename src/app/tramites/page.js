@@ -10,7 +10,7 @@ import Select from 'react-select';
 import ReactPaginate from 'react-paginate';
 import Sidebar from '@public/components/Sidebar';
 import Footer from "@public/components/Footer";
-import { useDarkMode } from "src/app/DarkModeContext";
+import { useDarkMode } from "@/app/DarkModeContext";
 
 import './style.css';
  

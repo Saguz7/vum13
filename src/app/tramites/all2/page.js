@@ -13,7 +13,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
 import Button from '@public/components/Button';
 import Footer from "@public/components/Footer";
-import { useDarkMode } from "src/app/DarkModeContext";
+import { useDarkMode } from "@/app/DarkModeContext";
 
 import Link from "next/link";
 import Sidebar from "@public/components/Sidebar";

@@ -1,41 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Name
+​
+Frontend para el proyecto de VUM
+​
+## Contents Table 
 
-## Getting Started
+- [Project Overview](#project-overview)
+- [Summary](#summary)
+- [Requirements](#requeriments)
+- [Build/Installation/Configuration](#installation)
+- [Usage](#usage)
+- [Apendix](#apendix)
+- [Notes](#notes)
+- [Contact](#contact)
+​
+## Project Overview
+​
+El proyecto tiene como objetivo crear las vistas necesarias para ser consumidas por SAS, esto proyecto consiste en pantallas individuales que seran activadas mediante procesos de SAS.
 
-First, run the development server:
+
+El proyecto utiliza como herramientas principales:
+* NodeJS
+* Angular
+
+## Summary 
+
+* Consumo de servicios API
+* Pantallas 
+​
+## Requirements
+
+* NodeJS: https://nodejs.org/es​
+* Angular: https://angular.io/ 
+* Angular CLI: https://angular.io/cli
+
+Recomendado:
+* Visual Studio Code: https://code.visualstudio.com/
+
+## Build / Installation / Configuration
+​
+Para poder correr correctamente el proyecto, se necesitan seguir los siguientes pasos.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clonación
+$ git clone  https://git-codecommit.us-east-1.amazonaws.com/v1/repos/VUM-frontend
+$ cd stallum-back
+$ git checkout develop || feature/X
+
+# Instalación
+$ npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
+​
+Para​ poder iniciar el servidor de desarrollo se solo requiere tener instalador NodeJs y Angular CLI
+```bash
+# Iniciar servidor
+$ ng serve
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Tests
+$ ng test
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Apendix
+​
+El Frontend se encargara de consumir los servicios del backend oara interacturar entre la BBDD y el usuario final.
+ 
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-
+Para mantener un estandar, se recomiendan las siguientes practicas.
 
 Commits: 
 Se utilizara el siguiente estandar para el manejo de commits.
@@ -50,3 +81,45 @@ Se utilizara el siguiente estandar para el manejo de commits.
     * 🧪 Test: Relacionado con pruebas
     * 🚀 Deploy: Publicación de una versión
     * 📦 Build: Cambios para build
+
+El mensaje debe de tener el siguiente formato:
+```
+<tipo>(<área>): <descripción>
+```
+
+Ejemplo:
+```bash
+🐛 Fix(API): Se soluciona problema generico.
+```
+
+Files & folders: El proyecto tiene que tener la siguiente estructuras de carpetas y archivos.
+
+```
+Project/
+├── public/
+│   ├── components/
+│   │   │   ├── entidad/
+├── src/
+│   ├── services/
+│   │   │   ├── entidad/
+│   │   │	│   ├── entidad.services.ts
+│   │   ├── app/
+│   │   │   ├── assets/
+│   │   │	├── pages/
+│   │   │	│   ├── page.js
+│   │   │	│   ├── style.css
+├── environments/ 
+│   ├── .env 
+
+
+```
+
+Se empezara con este template y se ira ajustando segun las necesidades.
+
+<!-- ### Bug Reports
+​
+If you encounter any issues with the project, please [submit a bug report](https://github.com/your-username/your-project/issues/new) with detailed information. -->
+
+## Contact
+​
+ 

@@ -1,47 +1,147 @@
-input[type="radio"] + label {
-    cursor: pointer;
-    }
-    input[type="radio"] + label:before{
-    content: "";
-    width: 25px;
-    height: 25px;
-    float: left;
-    margin: 0px 10px 0 0;
-    border: 2px solid #ccc;
-    background: #fff;
-    border-radius: 100%;
-    }
-    input[type="radio"]{
+* 
+  
+  h2 {
+    color: #4A001F;
+  }
+  
+
+  #form{
+    margin-top: 10px;
+  }
+  
+  
+  #form fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  
+  .finish {
+    text-align: center;
+  }
+  
+  #form fieldset:not(:first-of-type) {
     display: none;
-    }
-    input[type="radio"]:checked + label{
-    color: var(--guinda);
-    }
-    input[type="radio"]:checked + label:after{
-    content: "";
-    width: 23px;
-    height: 23px;
-    background-color: var(--guinda);
-    border: 5px solid white;
+  }
+  
+  #form .previous-step,
+  .next-step {
+    width: 100px;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px 10px 0px;
+    float: right;
+  }
+  
+  .form,
+  .previous-step {
+    background: #616161;
+  }
+  
+  .form,
+  .next-step {
+    background: #4A001F;
+  }
+  
+  #form .previous-step:hover,
+  #form .previous-step:focus {
+    background-color: #000000;
+  }
+  
+  #form .next-step:hover,
+  #form .next-step:focus {
+    background-color: #4A001F;
+  }
+  
+  .text {
+    color: #4A001F;
+    font-weight: normal;
+  }
+  
+  #progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey;
+    text-align: center;
+     
+  }
+
+  .progress{
+    width: 80%;
+    margin-left: 10%;
+  }
+  
+  #progressbar .active {
+    color: #4A001F;
+  }
+  
+  #progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 33%;
     float: left;
-    margin-left: -34px;
-    margin-top: 1px;
-    border-radius: 100%;
-    }
-    input[type="radio"]:checked + label::before{
-    border: 8px solid var(--guinda);
-    }
-
-
-    .width-form {
-        width: 100%;
-    }
-
-    .width-form-content{
-        width: 80%;
-
-    }
-
-    .form-select-type{
-        padding: 2%;
-    }
+    position: relative;
+    font-weight: 400;
+  }
+  
+  #progressbar #step1:before {
+    content: '1';
+  }
+  
+  #progressbar #step2:before {
+    content: '2';
+  }
+  
+  #progressbar #step3:before {
+    content: '3';
+  }
+  
+  #progressbar #step4:before {
+    content: '4';
+  }
+  
+  #progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px;
+  }
+  
+  #progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1;
+  }
+  
+  #progressbar li.active:before,
+  #progressbar li.active:after {
+    background: #6A0F49;
+  }
+  
+  .progress {
+    height: 20px;
+  }
+  
+  .progress-bar {
+    background-color: #6A0F49;
+  }

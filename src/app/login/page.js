@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Header from '../../../public/components/Header';
-import Button from '../../../public/components/Button';
-import Input from '../../../public/components/Input';
+import Header from '@public/components/Header';
+import Button from '@public/components/Button';
+import Input from '@public/components/Input';
 
 import styles from './style.css';
 
@@ -19,7 +19,7 @@ const containerStyle = {
 function Login() {
   const [formData, setFormData] = useState({
     correo: 'cesarsantiagoguzman@gmail.com',
-    clave_acceso: '123456789',
+    clave_acceso: 'Pass1234%',
   });
 
   const [formComplete, setFormComplete] = useState(false);

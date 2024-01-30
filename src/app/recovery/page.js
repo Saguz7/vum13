@@ -5,9 +5,10 @@ import Link from 'next/link';
 import Header from '../../../public/components/Header';
 import Button from '../../../public/components/Button';
 import Input from '../../../public/components/Input';
-const endPointBack = process.env.NEXT_PUBLIC_END_POINT_BACK;
-import axios from 'axios';
+ import axios from 'axios';
 import Notificacion from '@public/components/Notificacion';
+import Sidebar from '@public/components/Sidebar';
+import getConfig from '@raiz/config';
 
 import styles from './style.css';
 
@@ -20,6 +21,8 @@ const containerStyle = {
 };
 
 function Recovery() {
+  const { END_POINT_BACK } = getConfig();
+
   const [formData, setFormData] = useState({
     correo: 'cesarsantiagoguzman@gmail.com',
     rfc_curp: 'SAGC940106HOCNZS00',
@@ -31,6 +34,7 @@ function Recovery() {
   const [rfcCurpError, setRfcCurpError] = useState(false);
   const [formToShow, setFormToShow] = useState(true);
   const [notificacion, setNotificacion] = React.useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
 
   const handleInputChange = (fieldName, value) => {
@@ -76,7 +80,10 @@ function Recovery() {
 
         try {
           // Realiza la petición POST con Axios
-          const response = await axios.post('https://yxd2kb3ui7.execute-api.us-east-1.amazonaws.com/dev/validar-correo-restauracion-contrasena-vum', formDatainicial);
+          const response = await axios.post(
+            //'https://yxd2kb3ui7.execute-api.us-east-1.amazonaws.com/dev/validar-correo-restauracion-contrasena-vum',
+            END_POINT_BACK + "validar-correo-restauracion-contrasena-vum",
+            formDatainicial);
  
           var clave = Object.keys(response.data)[0];
  
@@ -118,7 +125,12 @@ function Recovery() {
 
        try {
         // Realiza la petición POST con Axios
-        const response = await axios.post('https://gimu9ukych.execute-api.us-east-1.amazonaws.com/dev/update-contrasena-test-vum', formDatainicial);
+        const response = await axios.post(
+         // 'https://gimu9ukych.execute-api.us-east-1.amazonaws.com/dev/update-contrasena-test-vum',
+         END_POINT_BACK + "update-contrasena-test-vum",
+
+          
+          formDatainicial);
          
  
   
@@ -139,10 +151,18 @@ function Recovery() {
     
   };
   
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
   return (
     <div style={containerStyle}>
       <Header />
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar}  />
 
       <div className="bg-white min-h-screen  ">
         <div className="container">

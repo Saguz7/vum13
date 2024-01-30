@@ -1,0 +1,83 @@
+.card-filters{
+    background:  #ebedf0;
+}
+ul {
+  list-style: none;
+}
+
+.marginCard {
+  margin-top: 30px;
+}
+
+.event-owner{
+  font-size: 28px;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+  } 
+  
+  /* Estilo para los botones de página intermedia */
+  .pagination li {
+    display: inline;
+    margin: 0 20px;
+  }
+   
+  .active { 
+    color: #4A001F; 
+    text-decoration: underline; /* Agrega un subrayado al elemento activo */
+    font-weight: bold; /* Puedes ajustar el estilo del texto activo según tus preferencias */
+  
+  }
+
+  .menu-icon{
+    overflow: auto;
+  }
+   
+  .card-iconos{
+    background:  #ebedf0;
+    height: 80vh;
+}
+
+.card-filters{
+    background:  #ebedf0;
+}
+
+.form-input-search {
+    width: 100%;
+    max-width: 380px;
+    height: 45px;
+    margin: 10px 0px;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    outline: none;
+    border-radius: 40px;
+    padding: 0px 15px;
+    font-size: 14px;
+    margin-left: 10px;
+    }
+
+
+    .card-iconos-center{
+        background:  #fff;
+        height: 70vh;
+    }
+
+
+    .title-card { 
+        padding: 10px; 
+        }
+
+
+    .icon-card { 
+        padding: 20px; 
+    }
+
+    .menu-icon{
+        overflow: auto;
+      }
+       

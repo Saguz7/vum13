@@ -1,4 +1,32 @@
-.card-iconos{
+.card-filters{
+    background:  #ebedf0;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+  } 
+  
+  /* Estilo para los botones de página intermedia */
+  .pagination li {
+    display: inline;
+    margin: 0 20px;
+  }
+   
+  .active { 
+    color: #4A001F; 
+    text-decoration: underline; /* Agrega un subrayado al elemento activo */
+    font-weight: bold; /* Puedes ajustar el estilo del texto activo según tus preferencias */
+  
+  }
+
+  .menu-icon{
+    overflow: auto;
+  }
+   
+  .card-iconos{
     background:  #ebedf0;
     height: 80vh;
 }
@@ -36,3 +64,8 @@
     .icon-card { 
         padding: 20px; 
     }
+
+    .menu-icon{
+        overflow: auto;
+      }
+       

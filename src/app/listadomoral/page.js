@@ -4,51 +4,60 @@ import React, { useState, useEffect } from 'react';
 import Header from '@public/components/Header';
 import Footer from '@public/components/Footer';
 import Link from 'next/link';
-
+import Sidebar from '@public/components/Sidebar';
+ 
 import Input from '@public/components/Input';
-import FileInput from '@public/components/FileInput'; // Corregir el import
+import FileInput from '@public/components/FileInput'; 
 import Button from '@public/components/Button';
 
-import ModalInfo from '@public/components/ModalInfo'; // Asegúrate de ajustar la ruta de importación
+import ModalInfo from '@public/components/ModalInfo';  
 import { useRouter } from 'next/navigation';
-
+import { useUser } from 'src/app/UserContext';
+import { useDarkMode } from 'src/app/DarkModeContext';
+import axios from "axios";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEyeSlash, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
+ 
 import './style.css';
+import getConfig from '@raiz/config';
 
-const containerStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  minHeight: '100vh',
-  overflow: 'hidden',  // Deshabilita el scroll
-  background: 'white'
-};
+ 
 
-const empresas = [
-  { 
-    id: 1, 
-    nombre: 'Empresa 1', 
-    rfc: 'XXXXXXXX1', 
-    
-  },
-  { 
-    id: 2, 
-    nombre: 'Empresa 2', 
-    rfc: 'XXXXXXXX2', 
-  }, 
-  // Agrega más oficinas según sea necesario
-];
-export default function Page() {
+ export default function Page() {
+  const { END_POINT_BACK } = getConfig();
+
   const [showModal, setShowModal] = useState(false);
   const [formComplete, setFormComplete] = useState(false);
   const [selectedOffice, setSelectedOffice] = useState(null);
   const router = useRouter();
+  const { updateUser } = useUser();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { isDarkMode } = useDarkMode();
+  const { userData, logout } = useUser();
+  const [empresas, setEmpresas] = useState([]);
 
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+
+    minHeight: '100vh',
+    overflow: 'hidden', // Deshabilita el scroll
+    backgroundColor: isDarkMode ? 'black' : 'white',
+    color: isDarkMode ? 'white' : 'black' 
+
+  };
+
+  const contentContainerStyle = {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+  };
   const openModal = () => {
-    console.log("Abriendo modal..."); // Agrega un console.log
     setShowModal(true);
   };
 
   const closeModal = () => {
-    console.log("Cerrando modal..."); // Agrega un console.log
     setShowModal(false);
   };
 
@@ -65,28 +74,101 @@ export default function Page() {
       setFormComplete(isFormComplete && selectedOffice !== null);
     }, 500);
 
-    return () => clearTimeout(timeoutId); // Limpiar el timeout si el componente se desmonta o se actualiza
+    return () => clearTimeout(timeoutId); 
   }, [formData, selectedOffice]);
 
   const handleSelectOffice = (officeId) => {
+    console.log(officeId);
+
     setSelectedOffice(officeId === selectedOffice ? null : officeId);
   };
 
-  const handleButtonClick = async () => {
-    // Lógica para manejar el clic en el botón después de seleccionar una oficina
-    console.log("Botón clickeado");
-
-    router.push('/buzon');
+  const handleButtonClick = async () => { 
+    console.log(selectedOffice);
+       updateUser({ 
+        persona_moral: selectedOffice.nombre 
+      });
+  
+        router.push('/buzon'); 
 
   };
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
+  const handleDeleteClick = (e,  id) => {
+    console.log(id);
+
+    let envioenlace = {
+      body: {
+        rfc_representante: userData.rfc,
+        rfc_representado: id
+       }
+      }
+    axios.post(
+     // 'https://8k76x7y1fh.execute-api.us-east-1.amazonaws.com/default/representante/eliminar', 
+     END_POINT_BACK + "/representante/eliminar",
+      envioenlace)
+      .then(response => {
+        actualizardatos(); 
+      })
+      .catch(error => {
+        console.error('Error en la petición inicial:', error);
+      });
+
+  };
+
+
+  const actualizardatos = () => {
+    let envioenlace = {
+      body: {
+        rfc: userData.rfc,
+       }
+      }
+    axios.post(
+      //'https://8k76x7y1fh.execute-api.us-east-1.amazonaws.com/default/representante/listar', 
+      END_POINT_BACK + "/representante/listar",
+      envioenlace)
+      .then(response => {
+         
+        const nuevasEmpresas = response.data.body.map(item => ({
+          id: item.rfc,
+          nombre: item.razon_social,
+          rfc: item.rfc,
+        }));
+
+        setEmpresas(nuevasEmpresas);
+
+         
+
+      })
+      .catch(error => {
+        console.error('Error en la petición inicial:', error);
+      });
+  }
+
+    
+
+
+  useEffect(() => {
+    actualizardatos();
+  }, []); // El array de dependencias está vacío para que esta useEffect solo se ejecute una vez en la carga inicial
+
 
   return (
     <div style={containerStyle}>
       <Header />
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar}  />
+      <div style={contentContainerStyle}>
 
-      <div className="bg-white min-h-screen">
+      <div className="min-h-screen">
         <div className="container">
-          <div className="card margin-top-3">
+          <div className={`card margin-top-3 ${isDarkMode ? 'dark-mode-card' : ''}`}>
             <div className="d-flex flex-column justify-content-center align-items-center mt-4">
               <div className="d-flex justify-content-center w-100 width-form">
                 <div className="row width-form-content">
@@ -103,22 +185,22 @@ export default function Page() {
                         </Link> 
                       </li> 
                     </ul>
-                  </div>
- 
- 
+                  </div> 
                   <div className="row">
                     <ul>
                       {empresas.map((empresa) => (
                         <div
                           key={empresa.id}
-                          className={`row office-container ${empresa.id === selectedOffice ? 'selected' : ''}`}
-                          onClick={() => handleSelectOffice(empresa.id)}
+                          className={`row office-container ${empresa.id === selectedOffice?.id ? 'selected' : ''}`}
+                          onClick={() => handleSelectOffice(empresa)}
                         >
                           <div className="col s10">
                             <h3>{empresa.nombre}</h3>
                             <p>RFC: {empresa.rfc}</p>
                           </div>
-                          <div className="col s2">
+                          <div className="col s2 d-flex justify-content-end">
+                          <FontAwesomeIcon icon={faTrash} onClick={(e) => handleDeleteClick(e, empresa.id)} />
+
                           </div>
                         </div>
                       ))}
@@ -138,9 +220,12 @@ export default function Page() {
             </div>
           </div>
         </div>
+        </div>
+
       </div>
 
-       
+      <Footer />
+ 
     </div>
   );
 }

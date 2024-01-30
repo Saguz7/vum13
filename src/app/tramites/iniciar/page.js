@@ -2,13 +2,9 @@
 "use client"; // This is a client component 👈🏽
 
 import React, { useState } from 'react';
-import Header from '../../../../public/components/Header';
-import Footer from '../../../../public/components/Footer';
-
-import Input from '../../../../public/components/Input';
-import FileInput from '../../../../public/components/FileInput'; // Corregir el import
-import Button from '../../../../public/components/Button';
+import Header from '@public/components/Header'; 
 import './style.css';
+import Sidebar from '@public/components/Sidebar';
 
 const containerStyle = {
   height: '100vh',
@@ -23,9 +19,19 @@ export default function Page() {
     setPersonaType(e.target.value);
   };
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <div style={containerStyle}>
       <Header />
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
       <div className="bg-white min-h-screen">
         <div className="container">

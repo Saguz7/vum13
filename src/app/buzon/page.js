@@ -7,12 +7,12 @@ import Filters from "@public/components/Filters";
 import Select from "react-select";
 import ReactPaginate from "react-paginate";
 import Sidebar from "@public/components/Sidebar";
-import { useDarkMode } from "src/app/DarkModeContext";
+import { useDarkMode } from "@/app/DarkModeContext";
 import axios from "axios";
 import Button from "@public/components/Button";
 import Footer from "@public/components/Footer";
 import getConfig from '@raiz/config';
-import { useUser } from 'src/app/UserContext';
+import { useUser } from '@/app/UserContext';
 
 import "./style.css";
 

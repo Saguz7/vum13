@@ -10,7 +10,7 @@ import styles from "./style.css";
 import { useRouter } from "next/navigation";
 import Sidebar from "@public/components/Sidebar";
 import { useDarkMode } from "@/app/DarkModeContext";
-import { useUser } from "src/app/UserContext";
+import { useUser } from "@/app/UserContext";
 import getConfig from '@raiz/config';
 
 function Llave() {

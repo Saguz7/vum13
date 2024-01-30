@@ -10,7 +10,7 @@ import Footer from "@public/components/Footer";
 
 import styles from './style.css';
 import { useRouter } from 'next/navigation';
-import { useUser } from 'src/app/UserContext';
+import { useUser } from '@/app/UserContext';
 import { useDarkMode } from '@/app/DarkModeContext';
 import getConfig from '@raiz/config';
 

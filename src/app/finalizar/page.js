@@ -10,9 +10,9 @@ import Input from '@public/components/Input';
 
 import styles from './style.css';
 import { useRouter } from 'next/navigation';
-import { useUser } from 'src/app/UserContext';
+import { useUser } from '@/app/UserContext';
 import Sidebar from '@public/components/Sidebar';
-import { useDarkMode } from 'src/app/DarkModeContext';
+import { useDarkMode } from '@/app/DarkModeContext';
 import axios from "axios";
 import getConfig from '@raiz/config';
 

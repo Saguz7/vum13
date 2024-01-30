@@ -5,8 +5,7 @@ import Link from "next/link";
 import { useUser } from "@/app/UserContext";
 import { useRouter } from "next/navigation";
 import { useDarkMode } from "@/app/DarkModeContext";
-import bannerImage from '@public/components/banner.png';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
